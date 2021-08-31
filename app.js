@@ -10,7 +10,7 @@ app.use(express.json());
 const demosRoute = require('./routes/demos');
 
 //Middleware
-app.use('/demoss', demosRoute);
+app.use('/demos', demosRoute);
 
 //Db connection
 mongoose.connect(process.env.db_conn, { useNewUrlParser: true, useUnifiedTopology:true, poolSize: 10} ,() => {
