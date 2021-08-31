@@ -18,4 +18,4 @@ mongoose.connect(process.env.db_conn, { useNewUrlParser: true, useUnifiedTopolog
 });
 
 //LISTEN TO THE SERVER
-app.listen(8000);
+app.listen(process.env.PORT || 8000);
