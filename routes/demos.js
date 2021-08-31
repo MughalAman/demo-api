@@ -47,3 +47,5 @@ router.patch('/:demoId', async (req, res) => {
         res.json({error: error});
     }
 });
+
+module.exports = router;
