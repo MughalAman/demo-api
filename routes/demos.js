@@ -3,7 +3,7 @@ const Demo = require('../models/demo.js');
 const router = express.Router();
 
 //SHOW ALL DEMOS
-router.get('/demos', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const demos = await Demo.find();
         res.json(demos);
