@@ -11,6 +11,10 @@ const demosRoute = require('./routes/demos');
 
 //Middleware
 app.use('/demos', demosRoute);
+app.use('/', (req, res) => {
+    const Doc = "GET /demos: List of demos <br/> POST /demos create a new demo: json body {\"name\": \"Test\", \"url\": \"https://amppa.dev/\"} <br/> PATCH /demos/{demoId} update existing demo with id (obtain from GET) json body accepts name or url";
+    res.send(Doc);
+});
 
 //Db connection
 mongoose.connect(process.env.db_conn, { useNewUrlParser: true, useUnifiedTopology:true}).then(() => {
