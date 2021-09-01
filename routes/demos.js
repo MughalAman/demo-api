@@ -20,8 +20,6 @@ router.post('/', async (req, res) => {
         url: req.body.url
     });
 
-    console.log(demo);
-
     try {
         const savedDemo = await demo.save();
         res.json(savedDemo);

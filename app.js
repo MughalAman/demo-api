@@ -13,9 +13,12 @@ const demosRoute = require('./routes/demos');
 app.use('/demos', demosRoute);
 
 //Db connection
-mongoose.connect(process.env.db_conn, { useNewUrlParser: true, useUnifiedTopology:true, poolSize: 10} ,() => {
-    console.log('Connected to database!');
+mongoose.connect(process.env.db_conn, { useNewUrlParser: true, useUnifiedTopology:true}).then(() => {
+    console.log('Connected to DB');
+}).catch(err => {
+    console.log('Database connection error! error: ' + err);
 });
+
 
 //LISTEN TO THE SERVER
 app.listen(process.env.PORT || 8000);
